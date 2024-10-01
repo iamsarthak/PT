@@ -1,172 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarthak Goel - Tech Entrepreneur</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style type="text/css">
-	/* ...Your existing CSS... */
-/* Bubble Logos */
-/*#about-me .flex.items-center {
-    width: 80px;
-    height: 80px;
-}*/
-
-</style>
+    <title>Sarthak Goel - My Tech Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+        }
+    </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M4CC7HC35K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold mb-2">Hey, I'm Sarthak Goel</h1>
+            <p class="text-xl text-gray-600">And this is my tech journey...</p>
+        </header>
 
-  gtag('config', 'G-M4CC7HC35K');
-</script>
-<body class="bg-gray-100 font-roboto" x-data="{}" x-init="AOS.init();">
+        <main class="space-y-8">
+            <section>
+                <p>
+                    I've always been fascinated by technology and its power to solve real-world problems. This passion led me to co-found <span class="font-semibold text-blue-600 cursor-pointer underline" onclick="openModal()">Invoid</span>, a venture that caught the eye of Y Combinator (W21 batch). We revolutionized identity verification for Indian enterprises, and yeah, it was quite a ride that ended with a successful acquisition!
+                </p>
+            </section>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-indigo-800 p-4">
-        <div class="container mx-auto">
-            <div class="flex justify-between">
-                <a class="text-white text-2xl font-bold" href="#">Sarthak Goel</a>
-                <ul class="flex space-x-4">
-                    <li><a class="text-white" href="#portfolio">Projects</a></li>
-                    <li><a class="text-white" href="#about-me">About Me</a></li>
-                    <li><a class="text-white" href="mailto:sarthakgoel1995@gmail.com">Contact</a></li>
+            <section>
+                <p>
+                    But my journey didn't start or end there. Before and after my startup exit, I've been deeply involved with multiple startups, contributing to technology development and innovation. Each experience has taught me something new about building products that people love and scaling tech solutions.
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    Along the way, I've created some cool tools that I'm pretty proud of:
+                </p>
+                <ul class="list-disc pl-6 mt-4 space-y-2">
+                    <li><a href="https://www.directchatnow.com" class="text-blue-600 hover:underline">WhatsApp Direct Chat</a> - because who has time to save contacts these days?</li>
+                    <li><a href="https://chromewebstore.google.com/detail/your-last-1-year-myntra-w/hhpkmeejbnfbpbfgmddogmggohcncbcl?authuser=0&hl=en" class="text-blue-600 hover:underline">Myntra 1 Year Wrap</a> - for those who love to visualize their shopping habits (guilty as charged!).</li>
+                    <li><a href="https://chrome.google.com/webstore/detail/tab-manager/jgjdflpjmacgigibdhnpccmhfaollfin" class="text-blue-600 hover:underline">Tab Manager</a> - because we all need help taming our browser chaos.</li>
+                    <li><a href="https://iamsarthak.github.io/metadata-extract/" class="text-blue-600 hover:underline">Metadata Extract</a> - a handy tool for extracting metadata from various files.</li>
+                    <li><a href="https://chromewebstore.google.com/detail/gaobdjbefgnnmnepikiadbdahmgajknm?hl=en" class="text-blue-600 hover:underline">Advanced Font Changer</a> - customize website fonts without altering layout or formatting.</li>
+                    <li><a href="https://chrome.google.com/webstore/detail/plhmambmpeaoonkmogjnhpjchdefdnfh/preview?hl=en&authuser=0" class="text-blue-600 hover:underline">Swiggy Wrap</a> - discover and share your favorite Swiggy dishes from the last year.</li>
                 </ul>
-            </div>
-        </div>
-    </nav>
+            </section>
 
-    <!-- Hero Section -->
-    <section class="bg-indigo-800 text-white text-center py-20">
-        <h1 class="text-4xl mb-4">Welcome to My Digital Journey</h1>
-        <p class="mb-4">Building solutions from personal pain points.</p>
-        <a href="https://topmate.io/sarthakgoel" class="bg-green-500 hover:bg-green-400 text-white py-2 px-6 rounded-full">Book an Appointment 📅</a>
-    </section>
+            <section>
+                <p>
+                    These days, I'm all about nurturing growth in SaaS and Fintech. I love mentoring emerging startups and exploring new tech frontiers. It's amazing to see how a simple idea can transform into a product that impacts thousands, if not millions, of lives.
+                </p>
+            </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16">
-        <div class="container mx-auto">
-            <h2 class="text-center text-3xl font-bold mb-8" data-aos="fade-up">My Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" data-aos="fade-up" data-aos-delay="200">
-                <!-- Project 1: Metadata Extract -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Metadata Extract</h3>
-                    <p class="mb-4">A tool for extracting metadata from various files.</p>
-                    <a href="https://iamsarthak.github.io/metadata-extract/" class="text-blue-500 hover:underline">View Project</a>
+            <section>
+                <p>
+                    If you're into tech, innovation, or just want to chat about the next big idea, I'm always up for a good conversation. You can reach out to me here:
+                </p>
+                <ul class="mt-4 space-y-2">
+                <li><i class="fas fa-calendar-check mr-2 text-blue-600"></i><a href="https://topmate.io/sarthakgoel" class="hover:underline">Schedule a meeting on Topmate</a></li>
+                    <li><i class="fas fa-envelope mr-2 text-blue-600"></i><a href="mailto:sarthakgoel1995@gmail.com" class="hover:underline">sarthakgoel1995@gmail.com</a></li>
+                    <li><i class="fab fa-linkedin mr-2 text-blue-600"></i><a href="https://www.linkedin.com/in/iamsarthakgoel" class="hover:underline">LinkedIn</a></li>
+                    <li><i class="fab fa-twitter mr-2 text-blue-600"></i><a href="https://twitter.com/iamsarthakgoel" class="hover:underline">Twitter</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <p>
+                    Thanks for stopping by and getting to know a bit about me. Let's innovate, create, and maybe change the world a little bit, shall we?
+                </p>
+            </section>
+        </main>
+
+        <footer class="mt-12 pt-8 border-t border-gray-300 text-center text-gray-600">
+            <p>© 2024 Sarthak Goel. Still coding, still dreaming.</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="invoidModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden overflow-y-auto h-full w-full" onclick="closeModal()">
+        <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white" onclick="event.stopPropagation()">
+            <div class="mt-3">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-2">Invoid: A Journey of Innovation</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-gray-500 mb-4">
+                        Invoid was more than just a startup; it was a revolution in identity verification. Here are some highlights from our journey:
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.ycombinator.com/companies/invoid" class="text-blue-600 hover:underline">Y Combinator Alum</a> - We were part of the W21 batch, an experience that supercharged our growth.</li>
+                        <li><a href="https://government.economictimes.indiatimes.com/news/technology/invoid-is-empowering-india-through-ai-solutions/72036774" class="text-blue-600 hover:underline">Featured in Economic Times</a> - Our AI solutions caught the attention of major media.</li>
+                        <li><a href="https://twitter.com/EduMinOfIndia/status/1342821325375606784" class="text-blue-600 hover:underline">Recognized by Education Ministry of India</a> - A proud moment for the team!</li>
+                        <li><a href="https://yourstory.com/2021/02/meet-six-winning-startups-ml-elevate-programme-ushering-next-frontier-machine-learning/amp" class="text-blue-600 hover:underline">YourStory Feature</a> - We were among the six winning startups in the ML Elevate programme.</li>
+                        <li><a href="http://www.producthunt.com/products/invoid" class="text-blue-600 hover:underline">Featured on Product Hunt</a> - The tech community's response was overwhelming.</li>
+                        <li><a href="https://inc42.com/startups/how-video-kyc-startup-invoid-cashed-in-on-indias-remote-onboarding-opportunity/amp/" class="text-blue-600 hover:underline">Inc42 Success Story</a> - Our journey from idea to successful startup.</li>
+                        <li><a href="https://aws.amazon.com/solutions/case-studies/invoid/" class="text-blue-600 hover:underline">AWS Case Study</a> - Amazon recognized our innovative use of their services.</li>
+                        <li><a href="https://techcrunch.com/2021/03/23/y-combinators-new-batch-features-its-largest-group-of-indian-startups/" class="text-blue-600 hover:underline">TechCrunch Mention</a> - We were part of YC's largest batch of Indian startups.</li>
+                    </ul>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-			    <h3 class="text-xl font-bold mb-4">Tab Manager</h3>
-			    <p class="mb-4">An extension to manage your browser tabs efficiently, offering a clean and organized view of all your open tabs.</p>
-			    <a href="https://chrome.google.com/webstore/detail/tab-manager/jgjdflpjmacgigibdhnpccmhfaollfin" class="text-blue-500 hover:underline">View Extension</a>
-			</div>
-
-			<div class="bg-white p-6 rounded-lg shadow-lg">
-			    <h3 class="text-xl font-bold mb-4">Advanced Font Changer</h3>
-			    <p class="mb-4">Change the font of any website seamlessly without altering its formatting. Choose from a variety of popular web-safe fonts to personalize your browsing experience.</p>
-			    <a href="https://chromewebstore.google.com/detail/gaobdjbefgnnmnepikiadbdahmgajknm?hl=en" class="text-blue-500 hover:underline">View Extension</a>
-			</div>
-
-			<div class="bg-white p-6 rounded-lg shadow-lg">
-			    <h3 class="text-xl font-bold mb-4">Your last 1 year Swiggy Wrap</h3>
-			    <p class="mb-4">Discover and share your favorite Swiggy dishes from the last year. This extension unveils your top picks, preferred restaurants, coupon codes, total expenditure, and much more on swiggy.com. Snap a picture and share your Swiggy Wrap with friends!</p>
-			    <a href="https://chrome.google.com/webstore/detail/plhmambmpeaoonkmogjnhpjchdefdnfh/preview?hl=en&authuser=0" class="text-blue-500 hover:underline">View Extension</a>
-			</div>
-<div class="bg-white p-6 rounded-lg shadow-lg">
-    <h3 class="text-xl font-bold mb-4">Create WhatsApp Link</h3>
-    <p class="mb-4">Send WhatsApp messages without saving the contact. Just enter the number, craft your message, and dive straight into a WhatsApp chat. Plus, generate a QR code for others to scan and start chatting with you without needing your number saved. Perfect for sending quick notes to temporary contacts like a delivery driver or a new acquaintance, keeping your contact list clean and your messaging efficient.</p>
-    <a href="https://iamsarthak.github.io/create-whatsapp-link" class="text-blue-500 hover:underline">View Project</a>
-</div>
-<div class="bg-white p-6 rounded-lg shadow-lg">
-    <h3 class="text-xl font-bold mb-4">Text Analyser</h3>
-    <p class="mb-4">Delve into the intricacies of your text with Text Analyser. This tool provides a detailed analysis of your text, including word count, character count, frequency of each word, and more. Whether you're polishing your essay or analyzing data, Text Analyser is here to provide insights into your text.</p>
-    <a href="https://iamsarthak.github.io/text-analyser" class="text-blue-500 hover:underline">View Project</a>
-</div>
-<div class="bg-white p-6 rounded-lg shadow-lg">
-    <h3 class="text-xl font-bold mb-4">Pretty JSON</h3>
-    <p class="mb-4">A tool designed to beautify and format JSON data, making it easier to read and understand. Whether you're debugging or simply trying to make sense of a large JSON object, Pretty JSON is here to simplify your data.</p>
-    <a href="https://iamsarthak.github.io/prettyJSON" class="text-blue-500 hover:underline">View Project</a>
-</div>
-<div class="bg-white p-6 rounded-lg shadow-lg">
-    <h3 class="text-xl font-bold mb-4">Custom Form Builder</h3>
-    <p class="mb-4">A tool crafted to create customizable forms with ease. Whether you need a simple contact form or a complex multi-step form, Custom Form Builder provides a user-friendly interface to design, build, and publish your forms.</p>
-    <a href="https://iamsarthak.github.io/custom-form-builder" class="text-blue-500 hover:underline">View Project</a>
-</div>
-<div class="bg-white p-6 rounded-lg shadow-lg">
-    <h3 class="text-xl font-bold mb-4">Text Diff Checker</h3>
-    <p class="mb-4">A tool crafted for comparing and highlighting differences between two text inputs. Whether you're proofreading documents or analyzing changes, Text Diff Checker provides a clear visual representation of text differences.</p>
-    <a href="https://iamsarthak.github.io/textDiffChecker" class="text-blue-500 hover:underline">View Project</a>
-</div>
-
-            </div>
-        </div>
-    </section>
-
-  <!-- About Me Section -->
-<section id="about-me" class="bg-gray-100 py-16">
-    <div class="container mx-auto px-6 lg:px-8">
-        <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">About Me</h2>
-        <div class="flex flex-col md:flex-row justify-between items-start mb-12" data-aos="fade-up" data-aos-delay="200">
-            <!-- Left Side -->
-            <div class="w-full md:w-1/3 mb-8 md:mb-0">
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="col-span-1 flex items-center justify-center">
-                        <div class="p-4 bg-white rounded-full shadow-lg">
-                            <img src="https://imgs.search.brave.com/yJorPMJISHOFUybzMdb9ZKqrsXIvKsr5VItTK55JUrA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly96ZW5w/cm9zcGVjdC1wcm9k/dWN0aW9uLnMzLmFt/YXpvbmF3cy5jb20v/dXBsb2Fkcy9waWN0/dXJlcy82MzkxMDAy/MzAyMWUwZTAwMDFl/YWFmNjMvcGljdHVy/ZQ" alt="inVOID Logo" class="w-16 h-auto">
-                        </div>
-                    </div>
-                    <div class="col-span-1 flex items-center justify-center">
-                        <div class="p-4 bg-white rounded-full shadow-lg">
-                            <img src="https://imgs.search.brave.com/qQLtZ8plVNTp8_6Mn479unEBT405d5NirqlH2cC6q5o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2IyL1lfQ29tYmlu/YXRvcl9sb2dvLnN2/Zw.svg" alt="Y Combinator Logo" class="w-16 h-auto">
-                        </div>
-                    </div>
-                    <div class="col-span-1 flex items-center justify-center">
-                        <div class="p-4 bg-white rounded-full shadow-lg">
-                            <img src="https://imgs.search.brave.com/l3sjUCt_yi1qUdBrNvid9tSonmqfOV8nthLmup2d5LY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pay5p/bWdraXQubmV0LzN2/bHFzNWF4eGpmL1BD/V1cvdXBsb2FkZWRJ/bWFnZXMvQXJ0aWNs/ZXMvSW50ZXJ2aWV3/cy8yMDIyL1NlcHRl/bWJlci9peGlnbyUy/MGxvZ28lMjBuZXcu/cG5nP3RyPXctMjcw/LGgtMjcwLGZvLWF1/dG8" alt="ixigo Logo" class="w-16 h-auto">
-                        </div>
-                    </div>
+                <div class="items-center px-4 py-3">
+                    <button id="closeModal" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        Back to My Story
+                    </button>
                 </div>
-            </div>
-            <!-- Right Side -->
-            <div class="w-full md:w-2/3 text-gray-700">
-                <p class="text-lg leading-relaxed mb-6">
-                    <i class="fas fa-lightbulb text-xl text-indigo-500 mr-2"></i>
-                    I'm <strong>Sarthak Goel</strong>, a tech entrepreneur with a knack for solving real-world problems using innovative technology solutions. My entrepreneurial journey began with co-founding <strong>inVOID</strong> at the age of 22. Our mission at inVOID was to automate identity verification workflows for enterprises across India, simplifying the way businesses onboard customers while adhering to compliance requirements.
-                </p>
-                <p class="text-lg leading-relaxed mb-6">
-                    <i class="fab fa-y-combinator text-xl text-orange-500 mr-2"></i>
-                    Our venture caught the eye of <strong>Y Combinator</strong>, one of the most prestigious startup accelerators, which provided us with invaluable support and resources to propel our venture forward. The journey with inVOID was a remarkable one, filled with learning, growth, and eventually a successful exit as our venture got acquired.
-                </p>
-                <p class="text-lg leading-relaxed mb-6">
-                    <i class="fas fa-users text-xl text-green-500 mr-2"></i>
-                    With a team of 15 dedicated individuals based in Gurugram, Haryana, India, we were able to create impactful products and technologies for fintechs and neo banks, making a significant mark in the Indian market.
-                </p>
-                <p class="text-lg leading-relaxed mb-6">
-                    <i class="fas fa-seedling text-xl text-yellow-500 mr-2"></i>
-                    Beyond inVOID, I've also been actively involved in the startup ecosystem, mentoring upcoming entrepreneurs and investing in promising ventures. I believe in the power of technology to drive change and am continually exploring new avenues to leverage tech for societal betterment.
-                </p>
-                <p class="text-lg leading-relaxed mb-6">
-                    <i class="fas fa-user-tie text-xl text-blue-500 mr-2"></i>
-                    As the Vice President of Product and Technology at <strong>Credenc</strong>, I led the development of new financial products, automated operational processes, and engaged with private equity firms for fundraising. My tenure saw the launch of award-winning financial systems and innovative products that made a significant impact on the education lending sector.
-                </p>
             </div>
         </div>
     </div>
-</section>
-    <!-- Footer -->
-    <footer class="bg-indigo-800 text-white text-center py-4">
-        <p>© 2023 Sarthak Goel | Built with ❤️ and a passion for solving personal pain points.</p>
-    </footer>
 
+    <script>
+        function openModal() {
+            document.getElementById('invoidModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('invoidModal').classList.add('hidden');
+        }
+
+        document.getElementById('closeModal').onclick = closeModal;
+    </script>
 </body>
-
 </html>
