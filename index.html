@@ -1,279 +1,1034 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sarthak Goel - Tech entrepreneur, Y Combinator alum, and creator of innovative tools and solutions. Learn about my journey, projects, and startup experiences.">
-    <meta name="keywords" content="Sarthak Goel, Invoid, Y Combinator, tech entrepreneur, WhatsApp Direct Chat, Myntra Wrap, Tab Manager">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Sarthak Goel - My Tech Journey">
-    <meta property="og:description" content="Tech entrepreneur, Y Combinator alum, and creator of innovative tools and solutions.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sarthakgoel.com">
-    
-    <title>Sarthak Goel - My Tech Journey</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Merriweather', serif;
-            line-height: 1.8;
-            scroll-behavior: smooth;
-        }
-        .skip-to-content {
-            position: absolute;
-            left: -9999px;
-            top: 0;
-            padding: 0.5rem 1rem;
-            background-color: #3B82F6;
-            color: white;
-            z-index: 100;
-        }
-        .skip-to-content:focus {
-            left: 0;
-        }
-        .focus-visible:focus {
-            outline: 2px solid #3B82F6;
-            outline-offset: 2px;
-        }
-        /* Improve modal accessibility */
-        .modal-overlay {
-            transition: opacity 0.3s ease;
-        }
-        /* Added for better keyboard navigation */
-        a:focus, button:focus {
-            outline: 2px solid #3B82F6;
-            outline-offset: 2px;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                transition: none !important;
-                animation: none !important;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Sarthak Goel — Founder, operator, and investor working at the intersection of technology, fintech, and private markets." />
+<meta property="og:title" content="Sarthak Goel — Founder. Operator. Investor." />
+<meta property="og:description" content="Tech entrepreneur, YC alum, and investor in private markets and early-stage fintech & AI." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sarthakgoel.com" />
+<title>Sarthak Goel — Founder · Operator · Investor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bone: #f5f1ea;
+  --bone-warm: #ece5d5;
+  --ink: #0d0d0f;
+  --ash: #45464a;
+  --klein: #2027c4;
+  --klein-deep: #161b8a;
+  --tangerine: #ff5a1f;
+  --sand: #d9c9a3;
+  --line: rgba(13, 13, 15, 0.12);
+  --line-strong: rgba(13, 13, 15, 0.4);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--klein); color: var(--bone); }
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.skip { position: absolute; left: -9999px; top: 0; padding: .5rem 1rem; background: var(--klein); color: var(--bone); z-index: 999; }
+.skip:focus { left: 0; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.5rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(245, 241, 234, 0.82);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--line);
+}
+.nav-mark {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.65rem;
+  letter-spacing: -0.01em;
+  text-decoration: none; color: var(--ink);
+  font-style: italic;
+}
+.nav-mark .dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--tangerine);
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: super;
+  transform: translateY(-2px);
+}
+.nav-links {
+  display: flex; gap: 2rem; list-style: none;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.nav-links a {
+  color: var(--ink); text-decoration: none;
+  position: relative; padding: 4px 0;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 100%; height: 2px;
+  background: var(--klein);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.hero {
+  min-height: 100vh;
+  padding: 9rem 2.5rem 4rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: '★';
+  position: absolute;
+  top: 12%; right: -4%;
+  font-size: 32rem;
+  line-height: 1;
+  color: var(--klein);
+  opacity: 0.07;
+  font-family: 'Instrument Serif', serif;
+  pointer-events: none;
+  animation: spinSlow 60s linear infinite;
+}
+@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.hero-tag {
+  grid-column: 1 / 6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ash);
+  align-self: start;
+  display: flex; align-items: center; gap: 0.75rem;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+.hero-tag::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--ink);
+}
+.hero-tag .pulse {
+  width: 8px; height: 8px;
+  background: var(--tangerine);
+  border-radius: 50%;
+  animation: pulse 1.8s ease-in-out infinite;
+  margin-right: 4px;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+.hero-title {
+  grid-column: 1 / 13;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(4.5rem, 14vw, 16rem);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  margin-top: 1.5rem;
+  position: relative;
+}
+.hero-title .line { display: block; overflow: hidden; }
+.hero-title .line span {
+  display: inline-block;
+  animation: rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-title .line:nth-child(1) span { animation-delay: 0.25s; }
+.hero-title .line:nth-child(2) span { animation-delay: 0.4s; }
+.hero-title .line:nth-child(3) span { animation-delay: 0.55s; }
+.hero-title em {
+  font-style: italic;
+  color: var(--klein);
+  position: relative;
+}
+.hero-title em::after {
+  content: '.';
+  color: var(--tangerine);
+  font-style: normal;
+}
+.hero-bottom {
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+  align-items: end;
+  animation: fadeUp 1s ease 0.85s both;
+}
+.hero-lede {
+  grid-column: 1 / 8;
+  font-family: 'Geist', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+  max-width: 48ch;
+  color: var(--ink);
+}
+.hero-lede em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--klein);
+}
+.hero-lede mark {
+  background: var(--tangerine);
+  color: var(--bone);
+  padding: 0.05em 0.35em;
+  font-weight: 600;
+  border-radius: 2px;
+}
+.hero-tags {
+  grid-column: 9 / 13;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-self: end;
+}
+.tag-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+.tag-pill:hover {
+  background: var(--ink);
+  color: var(--bone);
+  cursor: default;
+}
+.tag-pill.live {
+  background: var(--klein);
+  color: var(--bone);
+  border-color: var(--klein);
+}
+.ticker {
+  background: var(--ink);
+  color: var(--bone);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.ticker-track {
+  display: flex;
+  gap: 4rem;
+  white-space: nowrap;
+  animation: scroll 55s linear infinite;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+.ticker-track span { display: inline-flex; align-items: center; gap: 4rem; }
+.ticker-track span::after {
+  content: '✺';
+  color: var(--tangerine);
+  font-style: normal;
+  font-family: 'Geist', sans-serif;
+}
+.ticker-track .alt { color: var(--tangerine); }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+section { padding: 6rem 2.5rem; position: relative; }
+.section-head {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  align-items: end;
+}
+.section-num {
+  grid-column: 1 / 3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--klein);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--klein);
+  align-self: end;
+  width: max-content;
+}
+.section-title {
+  grid-column: 3 / 11;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--klein);
+}
+.section-title em::after { content: '.'; color: var(--tangerine); }
+.section-kicker {
+  grid-column: 11 / 13;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ash);
+  text-align: right;
+}
+.about {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+.about-text {
+  grid-column: 2 / 9;
+  font-family: 'Geist', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+.about-text p + p { margin-top: 1.25rem; }
+.about-text em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  color: var(--klein);
+  font-size: 1.5rem;
+}
+.about-text strong {
+  background: linear-gradient(180deg, transparent 65%, rgba(255, 90, 31, 0.35) 65%);
+  font-weight: 500;
+  padding: 0 2px;
+}
+.about-card {
+  grid-column: 10 / 13;
+  background: var(--ink);
+  color: var(--bone);
+  padding: 2rem;
+  align-self: start;
+  position: relative;
+  border-radius: 4px;
+}
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: -10px; right: -10px;
+  width: 24px; height: 24px;
+  background: var(--tangerine);
+  border-radius: 50%;
+}
+.about-card h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--tangerine);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.about-card dl { display: grid; gap: 0.85rem; }
+.about-card dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bone);
+  opacity: 0.5;
+  margin-bottom: 0.15rem;
+}
+.about-card dd {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(245, 241, 234, 0.15);
+}
+.about-card dd:last-child { border-bottom: none; }
+.chapters {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+}
+.chapter {
+  grid-column: span 6;
+  padding: 2.5rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  border-radius: 6px;
+  background: var(--bone-warm);
+}
+.chapter:nth-child(1) { background: var(--klein); color: var(--bone); }
+.chapter:nth-child(4) { background: var(--ink); color: var(--bone); }
+.chapter:nth-child(2),
+.chapter:nth-child(3) { border: 1px solid var(--line-strong); }
+.chapter:hover {
+  transform: translateY(-6px);
+}
+.chapter:nth-child(2):hover { background: var(--tangerine); color: var(--bone); border-color: var(--tangerine); }
+.chapter:nth-child(3):hover { background: var(--sand); border-color: var(--ink); }
+.ch-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.ch-title {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 2.75rem;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+}
+.ch-title em { font-style: italic; }
+.ch-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  opacity: 0.85;
+  letter-spacing: -0.005em;
+}
+.cred {
+  background: var(--ink);
+  color: var(--bone);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.cred .section-num { color: var(--tangerine); border-color: var(--tangerine); }
+.cred .section-title em { color: var(--tangerine); }
+.cred .section-title em::after { color: var(--bone); }
+.cred .section-kicker { color: var(--bone); opacity: 0.55; }
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+.cred-edu { grid-column: 1 / 6; }
+.cred-edu h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--tangerine);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--bone);
+}
+.edu-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(245, 241, 234, 0.13);
+}
+.edu-item:last-child { border-bottom: none; }
+.edu-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.4rem;
+}
+.edu-name em {
+  font-style: italic;
+  color: var(--tangerine);
+}
+.edu-detail {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.9rem;
+  color: var(--bone);
+  opacity: 0.65;
+}
+.cred-rec { grid-column: 7 / 13; }
+.cred-rec h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--tangerine);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--bone);
+}
+.rec-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.rec-list li {
+  padding: 1.1rem 1.25rem;
+  background: rgba(245, 241, 234, 0.04);
+  border-left: 2px solid var(--tangerine);
+  transition: all 0.3s;
+  border-radius: 0 4px 4px 0;
+}
+.rec-list li:nth-child(odd) { border-left-color: var(--klein); }
+.rec-list li:hover {
+  background: rgba(245, 241, 234, 0.08);
+  transform: translateX(4px);
+}
+.rec-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.015em;
+}
+.rec-issuer {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+}
+.tool {
+  grid-column: span 4;
+  padding: 1.75rem;
+  background: var(--bone-warm);
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.tool::before {
+  content: '\2192';
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.4rem;
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+.tool:hover {
+  background: var(--klein);
+  color: var(--bone);
+  transform: translateY(-4px);
+}
+.tool:hover::before {
+  opacity: 1;
+  transform: translate(4px, -4px);
+  color: var(--tangerine);
+}
+.tool-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  opacity: 0.6;
+}
+.tool-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.65rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+.tool-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.78;
+}
+.contact {
+  background: var(--klein);
+  color: var(--bone);
+  padding: 8rem 2.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.contact::after {
+  content: '\2738';
+  position: absolute;
+  bottom: -8rem; left: -3rem;
+  font-size: 26rem;
+  line-height: 1;
+  color: var(--tangerine);
+  opacity: 0.18;
+  font-family: 'Geist', sans-serif;
+  pointer-events: none;
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.contact-headline {
+  grid-column: 1 / 9;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(3.5rem, 9vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.contact-headline em {
+  font-style: italic;
+  color: var(--tangerine);
+}
+.contact-side {
+  grid-column: 10 / 13;
+  align-self: end;
+}
+.contact-list { list-style: none; }
+.contact-list li {
+  border-bottom: 1px solid rgba(245, 241, 234, 0.25);
+  padding: 1rem 0;
+}
+.contact-list li:first-child { border-top: 1px solid rgba(245, 241, 234, 0.25); }
+.contact-list a {
+  color: var(--bone);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Geist', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: padding-left 0.3s;
+}
+.contact-list a:hover {
+  padding-left: 0.5rem;
+  color: var(--tangerine);
+}
+.contact-list a::after {
+  content: '\2197';
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: transform 0.3s;
+}
+.contact-list a:hover::after { transform: translate(4px, -4px); opacity: 1; }
+.footer {
+  background: var(--ink);
+  color: var(--bone);
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.footer-mark {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  text-transform: none;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  opacity: 1;
+}
+.footer-mark .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--tangerine);
+  border-radius: 50%;
+  margin-left: 3px;
+  vertical-align: super;
+  transform: translateY(-2px);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rise {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media (max-width: 900px) {
+  .nav { padding: 1rem 1.25rem; }
+  .nav-links { gap: 1rem; font-size: 0.78rem; }
+  section, .contact { padding-left: 1.25rem; padding-right: 1.25rem; }
+  section { padding-top: 4rem; padding-bottom: 4rem; }
+  .hero { padding: 7rem 1.25rem 3rem; }
+  .hero-tag, .hero-title, .hero-lede, .hero-tags,
+  .about-text, .about-card,
+  .section-num, .section-title, .section-kicker,
+  .cred-edu, .cred-rec,
+  .contact-headline, .contact-side { grid-column: 1 / 13; }
+  .section-num { width: max-content; }
+  .section-kicker { text-align: left; }
+  .chapter { grid-column: 1 / 13; min-height: auto; padding: 1.75rem; }
+  .ch-title { font-size: 2.1rem; }
+  .tool { grid-column: span 6; }
+  .rec-list { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .hero::after { font-size: 18rem; right: -8%; }
+}
+@media (max-width: 600px) {
+  .tool { grid-column: 1 / 13; }
+  .ticker-track { font-size: 1.2rem; gap: 2.5rem; }
+  .ticker-track span { gap: 2.5rem; }
+  .hero-tags { margin-top: 1.5rem; }
+}
+</style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to content</a>
+<body>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm py-3 sticky top-0 z-10">
-        <div class="max-w-3xl mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-900">Sarthak Goel</a>
-            <ul class="flex space-x-4">
-                <li><a href="#about" class="text-gray-600 hover:text-blue-600 focus-visible">About</a></li>
-                <li><a href="#projects" class="text-gray-600 hover:text-blue-600 focus-visible">Projects</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-blue-600 focus-visible">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<a href="#main" class="skip">Skip to content</a>
 
-    <div class="max-w-3xl mx-auto px-4 py-12" id="main-content">
-        <header class="mb-12 text-center">
-            <h1 class="text-4xl font-bold mb-2">Hey, I'm Sarthak Goel</h1>
-            <p class="text-xl text-gray-600">And this is my tech journey...</p>
-        </header>
+<nav class="nav" aria-label="Primary">
+  <a href="#" class="nav-mark">Sarthak<span class="dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#chapters">Work</a></li>
+    <li><a href="#tools">Ledger</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-        <main class="space-y-8">
-            <section id="about" class="scroll-mt-16">
-                <p>
-                    I've always been fascinated by technology and its power to solve real-world problems. This passion led me to co-found <span class="font-semibold text-blue-600 cursor-pointer underline" tabindex="0" onclick="openModal()" onKeyPress="if(event.key==='Enter') openModal()" role="button" aria-expanded="false" aria-controls="invoidModal">Invoid</span>, a venture that caught the eye of Y Combinator (W21 batch). We revolutionized identity verification for Indian enterprises, and yeah, it was quite a ride that ended with a successful acquisition!
-                </p>
-            </section>
+<header class="hero" id="main">
+  <div class="hero-tag">
+    <span class="pulse"></span>Currently — Dubai · Delhi · Private markets
+  </div>
 
-            <section class="scroll-mt-16">
-                <p>
-                    But my journey didn't start or end there. Before and after my startup exit, I've been deeply involved with multiple startups, contributing to technology development and innovation. Each experience has taught me something new about building products that people love and scaling tech solutions.
-                </p>
-            </section>
+  <h1 class="hero-title">
+    <span class="line"><span>Founder.</span></span>
+    <span class="line"><span>Operator.</span></span>
+    <span class="line"><span><em>Investor</em></span></span>
+  </h1>
 
-            <section id="projects" class="scroll-mt-16">
-                <h2 class="text-2xl font-bold mb-4">Projects & Tools</h2>
-                <p>
-                    Along the way, I've created some cool tools that I'm pretty proud of:
-                </p>
-                <ul class="list-disc pl-6 mt-4 space-y-2">
-                    <li><a href="https://www.directchatnow.com" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">WhatsApp Direct Chat</a> - because who has time to save contacts these days?</li>
-                    <li><a href="https://chromewebstore.google.com/detail/your-last-1-year-myntra-w/hhpkmeejbnfbpbfgmddogmggohcncbcl?authuser=0&hl=en" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Myntra 1 Year Wrap</a> - for those who love to visualize their shopping habits (guilty as charged!).</li>
-                    <li><a href="https://chrome.google.com/webstore/detail/tab-manager/jgjdflpjmacgigibdhnpccmhfaollfin" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Tab Manager</a> - because we all need help taming our browser chaos.</li>
-                    <li><a href="https://iamsarthak.github.io/metadata-extract/" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Metadata Extract</a> - a handy tool for extracting metadata from various files.</li>
-                    <li><a href="https://chromewebstore.google.com/detail/gaobdjbefgnnmnepikiadbdahmgajknm?hl=en" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Advanced Font Changer</a> - customize website fonts without altering layout or formatting.</li>
-                    <li><a href="https://chrome.google.com/webstore/detail/plhmambmpeaoonkmogjnhpjchdefdnfh/preview?hl=en&authuser=0" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Swiggy Wrap</a> - discover and share your favorite Swiggy dishes from the last year.</li>
-                </ul>
-            </section>
+  <div class="hero-bottom">
+    <p class="hero-lede">
+      Tech entrepreneur and <em>Y&nbsp;Combinator</em> alum. Founded and exited a venture in AI infrastructure.
+      Today, deep in <mark>private markets</mark>, fintech, and early-stage investing.
+    </p>
+    <div class="hero-tags">
+      <span class="tag-pill live">SEBI · NISM XIX-D</span>
+      <span class="tag-pill">YC W21</span>
+      <span class="tag-pill">Exited</span>
+      <span class="tag-pill">AIF Cat I &amp; II</span>
+    </div>
+  </div>
+</header>
 
-            <section class="scroll-mt-16">
-                <p>
-                    These days, I'm all about nurturing growth in SaaS and Fintech. I love mentoring emerging startups and exploring new tech frontiers. It's amazing to see how a simple idea can transform into a product that impacts thousands, if not millions, of lives.
-                </p>
-            </section>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>SEBI · NISM XIX-D Certified</span>
+    <span class="alt">AIF Category I &amp; II</span>
+    <span>Private Markets</span>
+    <span class="alt">Early-Stage</span>
+    <span>Y Combinator Alum</span>
+    <span class="alt">Founder · Exited</span>
+    <span>Fintech &amp; AI</span>
+    <span class="alt">Operator · Advisor</span>
+    <span>SEBI · NISM XIX-D Certified</span>
+    <span class="alt">AIF Category I &amp; II</span>
+    <span>Private Markets</span>
+    <span class="alt">Early-Stage</span>
+    <span>Y Combinator Alum</span>
+    <span class="alt">Founder · Exited</span>
+    <span>Fintech &amp; AI</span>
+    <span class="alt">Operator · Advisor</span>
+  </div>
+</div>
 
-            <section id="contact" class="scroll-mt-16">
-                <h2 class="text-2xl font-bold mb-4">Get In Touch</h2>
-                <p>
-                    If you're into tech, innovation, or just want to chat about the next big idea, I'm always up for a good conversation. You can reach out to me here:
-                </p>
-                <ul class="mt-4 space-y-2">
-                    <li><i class="fas fa-calendar-check mr-2 text-blue-600" aria-hidden="true"></i><a href="https://topmate.io/sarthakgoel" class="hover:underline focus-visible" target="_blank" rel="noopener">Schedule a meeting on Topmate</a></li>
-                    <li><i class="fas fa-envelope mr-2 text-blue-600" aria-hidden="true"></i><a href="mailto:sarthakgoel1995@gmail.com" class="hover:underline focus-visible">sarthakgoel1995@gmail.com</a></li>
-                    <li><i class="fab fa-linkedin mr-2 text-blue-600" aria-hidden="true"></i><a href="https://www.linkedin.com/in/iamsarthakgoel" class="hover:underline focus-visible" target="_blank" rel="noopener">LinkedIn</a></li>
-                    <li><i class="fab fa-twitter mr-2 text-blue-600" aria-hidden="true"></i><a href="https://twitter.com/iamsarthakgoel" class="hover:underline focus-visible" target="_blank" rel="noopener">Twitter</a></li>
-                </ul>
-            </section>
+<section id="about">
+  <div class="section-head reveal">
+    <div class="section-num">§ 01 — About</div>
+    <h2 class="section-title">A non-linear <em>journey</em>, still in motion</h2>
+    <div class="section-kicker">Who · Why</div>
+  </div>
 
-            <section>
-                <p>
-                    Thanks for stopping by and getting to know a bit about me. Let's innovate, create, and maybe change the world a little bit, shall we?
-                </p>
-            </section>
-        </main>
-
-        <footer class="mt-12 pt-8 border-t border-gray-300 text-center text-gray-600">
-            <p>© 2024 Sarthak Goel. Still coding, still dreaming.</p>
-        </footer>
+  <div class="about">
+    <div class="about-text reveal">
+      <p>
+        I've always been fascinated by technology and its power to solve real problems.
+        That curiosity led me to co-found <em>Invoid</em> — a venture that caught the eye of
+        Y&nbsp;Combinator (W21) and went on to a successful acquisition.
+      </p>
+      <p>
+        Since then I've operated at senior product roles inside a regulated lender and a private-markets
+        platform — but the deeper pull has always been the <em>capital</em> side of the table. Today
+        I'm <strong>SEBI-certified (NISM XIX-D, AIF Cat I &amp; II)</strong> and spend most of my time
+        on private investments, fund work, and advising founders.
+      </p>
+      <p>
+        I back early-stage AI, fintech, and consumer businesses where I have real conviction — and pass
+        quietly where I don't. Always up for a good conversation about the <em>next big idea</em>, or
+        the next quiet, contrarian one.
+      </p>
     </div>
 
-    <!-- Modal - Improved for accessibility -->
-    <div id="invoidModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden overflow-y-auto h-full w-full modal-overlay" onclick="closeModal()" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white" onclick="event.stopPropagation()" role="document">
-            <div class="mt-3">
-                <div class="flex justify-between items-center">
-                    <h3 id="modalTitle" class="text-lg leading-6 font-medium text-gray-900 mb-2">Invoid: A Journey of Innovation</h3>
-                    <button id="closeModalX" class="text-gray-500 hover:text-gray-700 focus-visible" onclick="closeModal()" aria-label="Close dialog">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="mt-2 px-7 py-3">
-                    <p class="text-gray-500 mb-4">
-                        Invoid was more than just a startup; it was a revolution in identity verification. Here are some highlights from our journey:
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="https://www.ycombinator.com/companies/invoid" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Y Combinator Alum</a> - We were part of the W21 batch, an experience that supercharged our growth.</li>
-                        <li><a href="https://government.economictimes.indiatimes.com/news/technology/invoid-is-empowering-india-through-ai-solutions/72036774" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Featured in Economic Times</a> - Our AI solutions caught the attention of major media.</li>
-                        <li><a href="https://twitter.com/EduMinOfIndia/status/1342821325375606784" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Recognized by Education Ministry of India</a> - A proud moment for the team!</li>
-                        <li><a href="https://yourstory.com/2021/02/meet-six-winning-startups-ml-elevate-programme-ushering-next-frontier-machine-learning/amp" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">YourStory Feature</a> - We were among the six winning startups in the ML Elevate programme.</li>
-                        <li><a href="http://www.producthunt.com/products/invoid" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Featured on Product Hunt</a> - The tech community's response was overwhelming.</li>
-                        <li><a href="https://inc42.com/startups/how-video-kyc-startup-invoid-cashed-in-on-indias-remote-onboarding-opportunity/amp/" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">Inc42 Success Story</a> - Our journey from idea to successful startup.</li>
-                        <li><a href="https://aws.amazon.com/solutions/case-studies/invoid/" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">AWS Case Study</a> - Amazon recognized our innovative use of their services.</li>
-                        <li><a href="https://techcrunch.com/2021/03/23/y-combinators-new-batch-features-its-largest-group-of-indian-startups/" class="text-blue-600 hover:underline focus-visible" target="_blank" rel="noopener">TechCrunch Mention</a> - We were part of YC's largest batch of Indian startups.</li>
-                    </ul>
-                </div>
-                <div class="items-center px-4 py-3">
-                    <button id="closeModal" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300" onclick="closeModal()">
-                        Back to My Story
-                    </button>
-                </div>
-            </div>
-        </div>
+    <aside class="about-card reveal">
+      <h4>— Coordinates</h4>
+      <dl>
+        <dt>Based</dt><dd>Dubai · Delhi</dd>
+        <dt>Focus</dt><dd>Private markets</dd>
+        <dt>Past</dt><dd>Founder · Operator</dd>
+        <dt>Now</dt><dd>Investor · Advisor</dd>
+        <dt>Public</dt><dd>Writer · 15K+</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="chapters">
+  <div class="section-head reveal">
+    <div class="section-num">§ 02 — Work</div>
+    <h2 class="section-title">Where my <em>capital</em>, time &amp; conviction go</h2>
+    <div class="section-kicker">Four lanes</div>
+  </div>
+
+  <div class="chapters">
+    <div class="chapter reveal">
+      <div class="ch-num">№ 01 / Invest</div>
+      <h3 class="ch-title">Backing <em>founders</em> early</h3>
+      <p class="ch-desc">
+        I spend most of my time on private investments — across early-stage AI, fintech, and consumer.
+        SEBI-certified (NISM XIX-D, AIF Cat I &amp; II). I bring operator instinct, founder empathy,
+        and a network built across one exit and two countries. I write cheques where I have real
+        conviction, and pass quietly where I don't.
+      </p>
     </div>
 
-    <script>
-        // Improved modal functionality
-        function openModal() {
-            const modal = document.getElementById('invoidModal');
-            modal.classList.remove('hidden');
-            modal.setAttribute('aria-hidden', 'false');
-            
-            // Set focus to the modal for accessibility
-            document.getElementById('closeModalX').focus();
-            
-            // Trap focus inside modal
-            document.addEventListener('keydown', trapFocus);
-            
-            // Close on escape key
-            document.addEventListener('keydown', closeOnEscape);
-            
-            // Prevent background scrolling
-            document.body.style.overflow = 'hidden';
-        }
+    <div class="chapter reveal">
+      <div class="ch-num">№ 02 / Advise</div>
+      <h3 class="ch-title">Fund work &amp; <em>family-office</em> advisory</h3>
+      <p class="ch-desc">
+        I advise on private market investments — sourcing, diligence, and portfolio thinking.
+        I've worked inside a private-markets platform alongside LPs, GPs, and fund managers, and I
+        currently scout for an international deep-tech fund. I read PPMs the way some people read novels.
+      </p>
+    </div>
 
-        function closeModal() {
-            const modal = document.getElementById('invoidModal');
-            modal.classList.add('hidden');
-            modal.setAttribute('aria-hidden', 'true');
-            
-            // Remove event listeners
-            document.removeEventListener('keydown', trapFocus);
-            document.removeEventListener('keydown', closeOnEscape);
-            
-            // Restore background scrolling
-            document.body.style.overflow = 'auto';
-            
-            // Return focus to the element that opened the modal
-            document.querySelector('[aria-controls="invoidModal"]').focus();
-        }
-        
-        // Close modal when Escape key is pressed
-        function closeOnEscape(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        }
-        
-        // Trap focus inside modal for accessibility
-        function trapFocus(e) {
-            // If Tab or Shift+Tab pressed
-            if (e.key === 'Tab') {
-                const modal = document.getElementById('invoidModal');
-                const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-                
-                // If Shift+Tab and focus is on first element, move to last element
-                if (e.shiftKey && document.activeElement === firstElement) {
-                    e.preventDefault();
-                    lastElement.focus();
-                } 
-                // If Tab and focus is on last element, move to first element
-                else if (!e.shiftKey && document.activeElement === lastElement) {
-                    e.preventDefault();
-                    firstElement.focus();
-                }
-            }
-        }
-        
-        // Implement smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-        
-        // Register click event on close button
-        document.getElementById('closeModal').onclick = closeModal;
-    </script>
+    <div class="chapter reveal">
+      <div class="ch-num">№ 03 / Build</div>
+      <h3 class="ch-title">Founder, <em>operator</em>, exit</h3>
+      <p class="ch-desc">
+        I founded a venture in AI infrastructure that grew across regulated fintech and was acquired
+        in a founder-led, cash-out exit. I've since operated at senior product roles inside a
+        regulated lender and a private-markets platform — and the operator's lens shows up in every
+        investment I make.
+      </p>
+    </div>
 
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sarthak Goel",
-        "url": "https://sarthakgoel.com",
-        "jobTitle": "Tech Entrepreneur",
-        "alumniOf": "Y Combinator",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Invoid"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/in/iamsarthakgoel",
-            "https://twitter.com/iamsarthakgoel"
-        ]
+    <div class="chapter reveal">
+      <div class="ch-num">№ 04 / Write &amp; tinker</div>
+      <h3 class="ch-title">Words, <em>tools</em>, weekends</h3>
+      <p class="ch-desc">
+        I write about founders, product, and private markets for a community of 15K+ across LinkedIn
+        and Instagram. I mentor early-stage founders. And I still ship things on weekends — Chrome
+        extensions, AI tools, small experiments — to stay close to the metal.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cred">
+  <div class="section-head reveal">
+    <div class="section-num">§ 03 — Cred</div>
+    <h2 class="section-title">Education <em>&amp;</em> recognition</h2>
+    <div class="section-kicker">A short list</div>
+  </div>
+
+  <div class="cred-grid">
+    <div class="cred-edu reveal">
+      <h4>— Education</h4>
+      <div class="edu-item">
+        <div class="edu-name">Indian Institute of <em>Management</em>, Ahmedabad</div>
+        <div class="edu-detail">MBA</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-name">MIT — <em>Innovation</em> &amp; Entrepreneurship</div>
+        <div class="edu-detail">Selected for global cohort</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-name">USICT, <em>GGSIPU</em></div>
+        <div class="edu-detail">B.Tech, Computer Science Engineering</div>
+      </div>
+    </div>
+
+    <div class="cred-rec reveal">
+      <h4>— Selected recognition</h4>
+      <ul class="rec-list">
+        <li>
+          <div class="rec-name">Y Combinator</div>
+          <div class="rec-issuer">Founder · Acquired</div>
+        </li>
+        <li>
+          <div class="rec-name">SEBI · NISM XIX-D</div>
+          <div class="rec-issuer">AIF Cat I &amp; II Manager</div>
+        </li>
+        <li>
+          <div class="rec-name">Nasscom Fintech Award</div>
+          <div class="rec-issuer">Winner · Digital Onboarding</div>
+        </li>
+        <li>
+          <div class="rec-name">Fidelity "Money Maker"</div>
+          <div class="rec-issuer">Global Winner</div>
+        </li>
+        <li>
+          <div class="rec-name">IBS Global Fintech</div>
+          <div class="rec-issuer">Most Innovative Digital Rollout</div>
+        </li>
+        <li>
+          <div class="rec-name">AWS Architecture</div>
+          <div class="rec-issuer">Challenge · Finalist</div>
+        </li>
+        <li>
+          <div class="rec-name">Smart India Hackathon</div>
+          <div class="rec-issuer">Runner-up · National</div>
+        </li>
+        <li>
+          <div class="rec-name">Toycathon</div>
+          <div class="rec-issuer">Judge · Ministry of Education</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="section-head reveal">
+    <div class="section-num">§ 04 — Ledger</div>
+    <h2 class="section-title">Things I've shipped <em>on weekends</em></h2>
+    <div class="section-kicker">Side bench</div>
+  </div>
+
+  <div class="tools-grid">
+    <a href="https://aistockanalyser.com" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 01 — AI · Web</div>
+      <div class="tool-name">AI Stock Analyser</div>
+      <p class="tool-desc">A conversational portfolio analyser built on Claude and a custom MCP server.</p>
+    </a>
+    <a href="https://www.directchatnow.com" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 02 — Web</div>
+      <div class="tool-name">WhatsApp Direct</div>
+      <p class="tool-desc">Because who has time to save contacts these days?</p>
+    </a>
+    <a href="https://chromewebstore.google.com/detail/your-last-1-year-myntra-w/hhpkmeejbnfbpbfgmddogmggohcncbcl" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 03 — Chrome</div>
+      <div class="tool-name">Myntra Wrap</div>
+      <p class="tool-desc">For those who love to visualise their shopping habits — guilty as charged.</p>
+    </a>
+    <a href="https://chrome.google.com/webstore/detail/tab-manager/jgjdflpjmacgigibdhnpccmhfaollfin" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 04 — Chrome</div>
+      <div class="tool-name">Tab Manager</div>
+      <p class="tool-desc">Because we all need help taming our browser chaos.</p>
+    </a>
+    <a href="https://chromewebstore.google.com/detail/plhmambmpeaoonkmogjnhpjchdefdnfh" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 05 — Chrome</div>
+      <div class="tool-name">Swiggy Wrap</div>
+      <p class="tool-desc">Your favourite Swiggy dishes from the last year, in one place.</p>
+    </a>
+    <a href="https://chromewebstore.google.com/detail/gaobdjbefgnnmnepikiadbdahmgajknm" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 06 — Chrome</div>
+      <div class="tool-name">Advanced Font Changer</div>
+      <p class="tool-desc">Customise website fonts without breaking layout or formatting.</p>
+    </a>
+    <a href="https://iamsarthak.github.io/metadata-extract/" target="_blank" rel="noopener" class="tool reveal">
+      <div class="tool-meta">N° 07 — Web</div>
+      <div class="tool-name">Metadata Extract</div>
+      <p class="tool-desc">A handy tool for pulling metadata out of any file.</p>
+    </a>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <h2 class="contact-headline reveal">
+      Let's <em>build,</em><br>invest, or<br>talk shop.
+    </h2>
+    <div class="contact-side reveal">
+      <ul class="contact-list">
+        <li><a href="mailto:sarthakgoel1995@gmail.com">Email</a></li>
+        <li><a href="https://topmate.io/sarthakgoel" target="_blank" rel="noopener">Topmate</a></li>
+        <li><a href="https://www.linkedin.com/in/iamsarthakgoel" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://twitter.com/iamsarthakgoel" target="_blank" rel="noopener">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-mark">Sarthak Goel<span class="dot"></span></div>
+  <div>© Sarthak Goel · Dubai · Delhi</div>
+  <div>still coding, still dreaming</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const t = document.querySelector(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     }
-    </script>
+  });
+});
+
+const ld = document.createElement('script');
+ld.type = 'application/ld+json';
+ld.textContent = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sarthak Goel",
+  "url": "https://sarthakgoel.com",
+  "jobTitle": "Founder, Operator, Investor",
+  "alumniOf": ["Y Combinator", "Indian Institute of Management, Ahmedabad", "MIT", "USICT, GGSIPU"],
+  "sameAs": [
+    "https://www.linkedin.com/in/iamsarthakgoel",
+    "https://twitter.com/iamsarthakgoel"
+  ]
+});
+document.head.appendChild(ld);
+</script>
+
 </body>
 </html>
